@@ -13,11 +13,11 @@
 
 const total = 100;
 
-const ordered = prompt("Enter your order");
+const ordered = prompt("Enter your order of goods");
 if (ordered > total) {
-  console.log("Wrong count of order, we haven`t enough");
+  alert("We haven`t enough goods, sorry");
 } else if (ordered === null) {
-  console.log("Canceled by user");
+  alert("Canceled by user");
 } else {
-  console.log("Order recieved, manager call you");
+  alert("Order recieved, manager call you");
 }

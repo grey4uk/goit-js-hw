@@ -20,8 +20,6 @@ let deliveryCost;
 
 const countryName = prompt("enter your country for delivery");
 
-// countryName = countryName.toLowerCase();
-
 if (countryName === null) {
   alert("Canceled by user");
 } else {
@@ -47,8 +45,10 @@ if (countryName === null) {
       break;
   }
 }
-if (deliveryCost == undefined) {
+if (deliveryCost === undefined) {
   alert("We have not our department in your country");
 } else {
-  alert(`Delivery to ${countryName.toUpperCase()}, will be cost ${deliveryCost}`);
+  alert(
+    `Delivery to ${countryName.toUpperCase()}, will be cost ${deliveryCost}`
+  );
 }

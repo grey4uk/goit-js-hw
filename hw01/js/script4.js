@@ -17,7 +17,7 @@ const credits = 23580;
 const pricePerDroid = 3000;
 let message;
 
-const userChoice = prompt("How much of droids do you want to by");
+const userChoice = prompt("How much of droids do you want to buy?");
 const totalPrice = userChoice * pricePerDroid;
 const actualCredits = credits - totalPrice;
 if (userChoice === null) {

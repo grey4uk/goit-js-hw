@@ -11,7 +11,7 @@
 // const ADMIN_PASSWORD = 'jqueryismyjam';
 // let message;
 
-const PASSWORD1 = "qqq";
+const ADMIN_PASSWORD = "jqueryismyjam";
 const PASSWORD2 = "aaa";
 
 const name1 = "Alen";
@@ -22,7 +22,7 @@ let message;
 
 console.log(userInput);
 
-if (userInput === PASSWORD1) {
+if (userInput === ADMIN_PASSWORD) {
   message = `Добро пожаловать -- ${name1}`;
 } else if (userInput === PASSWORD2) {
   message = `Добро пожаловать -- ${name2}`;
