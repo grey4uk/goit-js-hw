@@ -36,7 +36,7 @@ if (countryName === null) {
       deliveryCost = 170;
       break;
 
-    case "індія":
+    case "индия":
       deliveryCost = 80;
       break;
 
