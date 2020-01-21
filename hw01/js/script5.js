@@ -51,6 +51,6 @@ if (deliveryCost === undefined) {
   alert("Нет доставки в вашу страну");
 } else {
   alert(
-    `Доставка в ${countryName.}, будет стоить ${deliveryCost}`
+    `Доставка в ${countryName}, будет стоить ${deliveryCost}`
   );
 }
