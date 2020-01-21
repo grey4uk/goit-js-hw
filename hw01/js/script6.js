@@ -24,7 +24,7 @@ while (true) {
     break;
   }
   input = Number(input);
-  if (Number.isNaN(input) === true) {
+  if (Number.isNaN(input)) {
     alert("Not valid input, try again");
   } else {
     total += input;

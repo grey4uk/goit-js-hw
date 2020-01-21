@@ -17,15 +17,15 @@ const credits = 23580;
 const pricePerDroid = 3000;
 let message;
 
-const userChoice = prompt("How much of droids do you want to buy?");
-const totalPrice = userChoice * pricePerDroid;
+const userChoice = prompt("Сколько дроидов хотите купить?");
+const totalPrice = Number(userChoice) * pricePerDroid;
 const actualCredits = credits - totalPrice;
 if (userChoice === null) {
-  message = "canceled by user";
+  message = "Отменено пользователем!";
 } else if (totalPrice > credits) {
-  message = "Not enough credits";
+  message = "Недостаточно средств на счету!";
 } else {
-  message = `you buy ${userChoice}, droids and your actual credits - ${actualCredits}`;
+  message = `Вы купили ${userChoice} дроидов, на счету осталось ${actualCredits} кредитов.`;
 }
 
 alert(message);

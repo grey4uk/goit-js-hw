@@ -15,9 +15,9 @@ const total = 100;
 
 const ordered = prompt("Enter your order of goods");
 if (ordered > total) {
-  alert("We haven`t enough goods, sorry");
+  alert("На складе недостаточно твоаров!");
 } else if (ordered === null) {
-  alert("Canceled by user");
+  alert("Отменено пользователем");
 } else {
-  alert("Order recieved, manager call you");
+  alert("Заказ оформлен, с вами свяжется менеджер");
 }

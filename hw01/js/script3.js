@@ -12,20 +12,14 @@
 // let message;
 
 const ADMIN_PASSWORD = "jqueryismyjam";
-const PASSWORD2 = "aaa";
 
-const name1 = "Alen";
-const name2 = "Alex";
 
 const userInput = prompt("Input password");
 let message;
 
-console.log(userInput);
-
 if (userInput === ADMIN_PASSWORD) {
-  message = `Добро пожаловать -- ${name1}`;
-} else if (userInput === PASSWORD2) {
-  message = `Добро пожаловать -- ${name2}`;
+  message = `Добро пожаловать`;
+
 } else if (userInput === null) {
   message = `Отменнено пользователем`;
 } else {

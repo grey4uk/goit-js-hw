@@ -43,6 +43,8 @@ if (countryName === null) {
     case "jamaica":
       deliveryCost = 120;
       break;
+    default:
+      break;
   }
 }
 if (deliveryCost === undefined) {
