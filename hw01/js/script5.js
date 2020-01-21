@@ -18,29 +18,29 @@
 
 let deliveryCost;
 
-const countryName = prompt("enter your country for delivery");
+const countryName = prompt("Введите страну доставки");
 
 if (countryName === null) {
-  alert("Canceled by user");
+  alert("Отменено пользователем");
 } else {
   switch (countryName.toLowerCase()) {
-    case "china":
+    case "китай":
       deliveryCost = 100;
       break;
 
-    case "chilli":
+    case "чили":
       deliveryCost = 250;
       break;
 
-    case "australian":
+    case "австралия":
       deliveryCost = 170;
       break;
 
-    case "india":
+    case "індія":
       deliveryCost = 80;
       break;
 
-    case "jamaica":
+    case "ямайка":
       deliveryCost = 120;
       break;
     default:
