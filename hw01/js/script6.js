@@ -31,5 +31,3 @@ while (true) {
   }
 }
 alert(`All sum is equal -- ${total}`);
-// input = Number(prompt("Input number"));
-// alert(Number.isNaN(input));
