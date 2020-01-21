@@ -48,9 +48,9 @@ if (countryName === null) {
   }
 }
 if (deliveryCost === undefined) {
-  alert("We have not our department in your country");
+  alert("Нет доставки в вашу страну");
 } else {
   alert(
-    `Delivery to ${countryName.toUpperCase()}, will be cost ${deliveryCost}`
+    `Доставка в ${countryName.toUpperCase()}, будет стоить ${deliveryCost}`
   );
 }

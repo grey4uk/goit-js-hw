@@ -13,7 +13,7 @@
 
 const total = 100;
 
-const ordered = prompt("Enter your order of goods");
+const ordered = prompt("Введите количество товаров для покупки");
 if (ordered > total) {
   alert("На складе недостаточно твоаров!");
 } else if (ordered === null) {

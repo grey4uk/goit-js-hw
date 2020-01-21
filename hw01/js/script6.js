@@ -19,7 +19,7 @@
 let input;
 let total = 0;
 while (true) {
-  input = prompt("Input number");
+  input = prompt("Введите число");
   if (input === null) {
     break;
   }

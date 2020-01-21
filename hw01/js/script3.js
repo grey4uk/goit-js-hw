@@ -14,7 +14,7 @@
 const ADMIN_PASSWORD = "jqueryismyjam";
 
 
-const userInput = prompt("Input password");
+const userInput = prompt("Введите пароль");
 let message;
 
 if (userInput === ADMIN_PASSWORD) {
