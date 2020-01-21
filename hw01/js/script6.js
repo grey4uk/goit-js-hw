@@ -25,9 +25,9 @@ while (true) {
   }
   input = Number(input);
   if (Number.isNaN(input)) {
-    alert("Not valid input, try again");
+    alert("Было введено не число, попробуйте еще раз");
   } else {
     total += input;
   }
 }
-alert(`All sum is equal -- ${total}`);
+alert(`Общая сумма чисел равна -- ${total}`);
