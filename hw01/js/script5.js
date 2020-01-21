@@ -44,13 +44,11 @@ if (countryName === null) {
       deliveryCost = 120;
       break;
     default:
-      break;
+      deliveryCost = null;
   }
 }
-if (deliveryCost === undefined) {
+if (deliveryCost === null) {
   alert("Нет доставки в вашу страну");
 } else {
-  alert(
-    `Доставка в ${countryName}, будет стоить ${deliveryCost}`
-  );
+  alert(`Доставка в ${countryName}, будет стоить ${deliveryCost}`);
 }

@@ -18,7 +18,7 @@ const pricePerDroid = 3000;
 let message;
 
 const userChoice = prompt("Сколько дроидов хотите купить?");
-const totalPrice = Number(userChoice) * pricePerDroid;
+const totalPrice = Number(userChoice) * pricePerDroid;//Number-Підстраховка від некоректного вводу даних
 const actualCredits = credits - totalPrice;
 if (userChoice === null) {
   message = "Отменено пользователем!";
