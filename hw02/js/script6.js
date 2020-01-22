@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 // Напиши скрипт со следующим функционалом:
 
@@ -10,3 +10,26 @@
 let input;
 const numbers = [];
 let total = 0;
+let i = 0;
+
+while (true) {
+  input = prompt("Введите число");
+  if (input === null) {
+    break;
+  }
+  input = Number(input);
+  if (Number.isNaN(input)) {
+    alert("Было введено не число, попробуйте еще раз");
+  } else {
+    numbers[i] = input;
+    i++;
+  }
+}
+// alert(`Общая сумма чисел равна -- ${total}`);
+function add(array){
+    for(const arrayItem of array){
+        total+=arrayItem;
+    }
+    return total;
+}
+console.log(`Общая сумма чисел равна`,add(numbers));
