@@ -25,11 +25,11 @@ while (true) {
     i++;
   }
 }
-// alert(`Общая сумма чисел равна -- ${total}`);
-function add(array){
-    for(const arrayItem of array){
-        total+=arrayItem;
-    }
-    return total;
+
+function add(array) {
+  for (const arrayItem of array) {
+    total += arrayItem;
+  }
+  return total;
 }
-console.log(`Общая сумма чисел равна`,add(numbers));
+console.log(`Общая сумма чисел равна`, add(numbers));

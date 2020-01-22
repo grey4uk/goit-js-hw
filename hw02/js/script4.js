@@ -10,8 +10,8 @@ const formatString = function(string) {
   // твой код
   const stringArray = string.split("");
   if (stringArray.length > maxLength) {
-      stringArray.splice(maxLength, stringArray.length - maxLength, symbol);
-      return  stringArray.join("");
+    stringArray.splice(maxLength, stringArray.length - maxLength, symbol);
+    return stringArray.join("");
   } else {
     return string;
   }
