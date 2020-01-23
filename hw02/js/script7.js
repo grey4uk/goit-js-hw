@@ -23,13 +23,14 @@ const isLoginValid = function(login) {
 const isLoginUnique = function(allLogins, login) {
   // твой код
   let isUnique;
-  !allLogins.includes(login) ? (isUnique = true) : (isUnique = false);
+  allLogins.includes(login) ? (isUnique = false) : (isUnique = true);
   return isUnique;
 };
 
 const addLogin = function(allLogins, login) {
   // твой код
   let message;
+  
   if (isLoginValid(login)) {
     if (isLoginUnique(allLogins, login)) {
       allLogins.push(login);

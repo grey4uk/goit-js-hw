@@ -4,15 +4,13 @@
 console.log('---------task5-----------');
 const checkForSpam = function(message) {
   // твой код
-  const workArray = message.split(" ");
-  for (let i = 0; i < workArray.length; i++) {
+ 
     if (
-      workArray[i].toLowerCase().includes("sale") ||
-      workArray[i].toLowerCase().includes("spam")
+      message.toLowerCase().includes("sale") ||  message.toLowerCase().includes("spam")
     ) {
       return true;
     }
-  }
+  
   return false;
 };
 
