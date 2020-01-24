@@ -10,6 +10,7 @@ const map = [
   [6, "Lika:18"]
 ];
 const weapon = [[5, "Pistol"]];
+
 const getNameById = (id, searchArray) => {
   for (let people of searchArray) {
     if (people.includes(id)) {
@@ -30,9 +31,17 @@ const getSniperById = (id, searchArray) => {
     }
   }
 };
+const getWeaponById = (id, weapon) => {
+    for (let i=0; i < weapon.length; i++) {
+        if (weapon[i][0] === id) {
+            return weapon[i][1];
+        }
+    }
+    return 'FREE'; 
+};
 const addWeaponToSniper = (sniper, weapon) => {
   // console.log(sniper);
-  return sniper[1].split(":")[0] + getWeaponById(sniper[0], weapon); //<=====Продолжить getWeaponById
+  return sniper[1].split(":")[0] + ' (' + getWeaponById(sniper[0], weapon) + ')';
 };
 for (let i = 0; i < snipers.length; i++) {
   const currentSniper = getSniperById(snipers[i], map);
@@ -40,10 +49,24 @@ for (let i = 0; i < snipers.length; i++) {
   sniperPeople.push(currentSniperWithWeapon);
 }
 console.log(`Снайпера: ${sniperPeople.join(", ")}`);
-//Вывести:
+const getAdultPeople = (id, searchArray) => {
+    for (let people of searchArray) {
+      if (people.includes(id)) {
+        return people[1].split(":")[1] >= 18 ? people[1].split(":")[0]: null;
+      }
+    }
+  };
+  const adultPeople = [];
+  for (let i = 0; i < people.length; i++) {
+      const curentPerson = getAdultPeople(people[i], map)
+    if (curentPerson) {
+        adultPeople.push(curentPerson);
+    }
+  }
+  console.log(`Совершеннолетние: ${adultPeople.join(", ")}`);
+  
+// Вывести имена людей из масива people:
 //  Люди: Alen, Artem, Tom, Lika
 //  Снайпера: Alen (FREE), Tom (Pistol)
 //  Совершеннолетние: Artem, Tom, Lika
 // Твой**** кролик писал...
-
-
