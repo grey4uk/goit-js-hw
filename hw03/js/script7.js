@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 console.log("-------------------task7gi-------------------");
 // Напиши скрипт управления личным кабинетом интернет банка. Есть объект account в котором необходимо реализовать методы для работы с балансом и историей транзакций.
 
@@ -7,8 +7,8 @@ console.log("-------------------task7gi-------------------");
  * Можно положить либо снять деньги со счета.
  */
 const Transaction = {
-  DEPOSIT: 'deposit',
-  WITHDRAW: 'withdraw',
+  DEPOSIT: "deposit",
+  WITHDRAW: "withdraw"
 };
 
 /*
@@ -26,7 +26,9 @@ const account = {
    * Метод создает и возвращает объект транзакции.
    * Принимает сумму и тип транзакции.
    */
-  createTransaction(amount, type) {},
+  createTransaction(amount, type) {
+   
+  },
 
   /*
    * Метод отвечающий за добавление суммы к балансу.
@@ -61,5 +63,7 @@ const account = {
    * Метод возвращает количество средств
    * определенного типа транзакции из всей истории транзакций
    */
-  getTransactionTotal(type) {},
+  getTransactionTotal(type) {}
 };
+
+
