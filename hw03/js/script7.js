@@ -1,16 +1,18 @@
 "use strict";
-console.log("-------------------task7gi-------------------");
+console.log("-------------------task7-------------------");
 // Напиши скрипт управления личным кабинетом интернет банка. Есть объект account в котором необходимо реализовать методы для работы с балансом и историей транзакций.
 
 /*
  * Типов транзацкий всего два.
  * Можно положить либо снять деньги со счета.
  */
+// debugger;
 const Transaction = {
   DEPOSIT: "deposit",
   WITHDRAW: "withdraw"
 };
-
+console.log(Transaction.DEPOSIT);
+let transactionsCounter = 0;
 /*
  * Каждая транзакция это объект со свойствами: id, type и amount
  */
@@ -27,7 +29,9 @@ const account = {
    * Принимает сумму и тип транзакции.
    */
   createTransaction(amount, type) {
-    ({ type: type, amount: amount });
+    const transaction = { id: transactionsCounter, type: type, amount: amount };
+    transactionsCounter += 1;
+    return transaction;
   },
 
   /*
@@ -37,7 +41,10 @@ const account = {
    * после чего добавляет его в историю транзакций
    */
   deposit(amount) {
-  this.transactions.push(this.createTransaction(amount, Transaction.DEPOSIT));
+    this.transactions.push(
+      this.createTransaction(amount, Transaction["DEPOSIT"])
+    );
+    this.balance += amount;
   },
 
   /*
@@ -50,45 +57,56 @@ const account = {
    * о том, что снятие такой суммы не возможно, недостаточно средств.
    */
   withdraw(amount) {
-    amount<=this.balance?this.transactions.push(this.createTransaction(amount, Transaction.WITHDRAW)):alert("not enough money");
+    if (amount <= this.balance) {
+      this.transactions.push(
+        this.createTransaction(amount, Transaction["WITHDRAW"])
+      );
+      this.balance -= amount;
+    } else {
+      alert("not enough money");
+    }
   },
 
   /*
    * Метод возвращает текущий баланс
    */
   getBalance() {
-    for(this.transaction of this.transactions){
-      this.transaction.type===Transaction.DEPOSIT?this.balance=+this.transaction[Transaction.DEPOSIT]:this.balance=+this.transaction[Transaction.WITHDRAW];
-    }
+    return this.balance;
   },
 
   /*
    * Метод ищет и возвращает объект транзации по id
    */
-  getTransactionDetails(id) {},
+  getTransactionDetails(id) {
+    return this.transactions[id];
+  },
 
   /*
    * Метод возвращает количество средств
    * определенного типа транзакции из всей истории транзакций
    */
-  getTransactionTotal(type) {}
+  getTransactionTotal(type) {
+    let total = 0;
+    for ( this.transaction of this.transactions)
+      if (this.transaction.type === type) {
+        total += this.transaction.amount;
+      }
+    return total;
+  }
 };
 
-console.table(Transaction);
 
 while (true) {
-  let i = 1;
   let choiceOfTransaction = prompt("Input 1 for deposit or 2 for withdraw");
   if (choiceOfTransaction === null) {
     alert("canceled");
     break;
   }
   choiceOfTransaction = Number(choiceOfTransaction);
-  let typeOfTransaction;
   let amountOfTransaction;
   if (choiceOfTransaction === 1) {
-    typeOfTransaction = Transaction.DEPOSIT;
     amountOfTransaction = Number(prompt("input sum"));
+    account.deposit(amountOfTransaction);
     if (amountOfTransaction === null) {
       alert("canceled");
       break;
@@ -97,8 +115,8 @@ while (true) {
       alert("uncorrect sum");
     }
   } else if (choiceOfTransaction === 2) {
-    typeOfTransaction = Transaction.WITHDRAW;
     amountOfTransaction = Number(prompt("input sum"));
+    account.withdraw(amountOfTransaction);
     if (amountOfTransaction === null) {
       alert("canceled");
       break;
@@ -109,10 +127,15 @@ while (true) {
   } else {
     alert("wrong choice, try again");
   }
-  account.createTransaction(amountOfTransaction, typeOfTransaction);
 }
-// console.log(account.createTransaction(amountOfTransaction, typeOfTransaction));
+
 console.table(account.transactions);
+
+console.log(account.getTransactionDetails(1));
+// debugger;
+console.log(account.getTransactionTotal(Transaction.DEPOSIT));
+
+console.log(account.getBalance());
 
 ////////////////////////////////////////WORKING////////////////////////////////////////////////////////////////
 //////////////////////////////////////Variant Artema/////////////////////////////////////////////////////
@@ -125,33 +148,33 @@ console.table(account.transactions);
 //     DEPOSIT: 'deposit',
 //     WITHDRAW: 'withdraw',
 //   };
-  
+
 //   /*
 //    * Каждая транзакция это объект со свойствами: id, type и amount
 //    */
-  
+
 //   const account = {
-     
+
 //     // Текущий баланс счета
 //     balance: 0,
-  
+
 //     // История транзакций
 //     transactions: [],
-  
+
 //     /*
 //      * Метод создает и возвращает объект транзакции.
 //      * Принимает сумму и тип транзакции.
 //      */
 //     createTransaction(amount, type) {
-        
+
 //         return {
-//             amount, 
-//             type, 
+//             amount,
+//             type,
 //             id: this.transactions.length+1
 //         }
-        
+
 //     },
-  
+
 //     /*
 //      * Метод отвечающий за добавление суммы к балансу.
 //      * Принимает сумму танзакции.
@@ -163,7 +186,7 @@ console.table(account.transactions);
 //         const newTransaction = this.createTransaction(amount, Transaction.DEPOSIT);
 //         this.transactions.push(newTransaction);
 //     },
-  
+
 //     /*
 //      * Метод отвечающий за снятие суммы с баланса.
 //      * Принимает сумму танзакции.
@@ -183,14 +206,14 @@ console.table(account.transactions);
 //             this.balance -= amount;
 //         }
 //     },
-  
+
 //     /*
 //      * Метод возвращает текущий баланс
 //      */
 //     getBalance() {
 //         return this.balance;
 //     },
-  
+
 //     /*
 //      * Метод ищет и возвращает объект транзации по id
 //      */
@@ -201,7 +224,7 @@ console.table(account.transactions);
 //             }
 //         }
 //     },
-  
+
 //     /*
 //      * Метод возвращает количество средств
 //      * определенного типа транзакции из всей истории транзакций
