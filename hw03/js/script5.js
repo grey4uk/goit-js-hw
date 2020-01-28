@@ -12,11 +12,11 @@ const products = [
 const getAllPropValues = function(arr, prop) {
   // твой код
   const AllPropValues = [];
-  for (let arrItem of arr) {
+  for (let arrItem of arr)
     if (prop in arrItem){
     AllPropValues.push(arrItem[prop]);
     }
-  }
+  
   return AllPropValues;
 };
 

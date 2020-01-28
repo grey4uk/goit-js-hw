@@ -10,12 +10,6 @@ const countProps = function(obj) {
   }
   return i;
 };
-
-const countProp = function(obj) {
-    // твой код
-   return Object.keys(obj).length;
-  };
-
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
@@ -25,8 +19,16 @@ console.log(countProps({ name: "Mango", age: 2 })); // 2
 
 console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 })); // 3
 
-console.table(countProp({})); // 0
+//////////////another variant////////////////////////////
+// const countProp = function(obj) {
+//     // твой код
+//    return Object.keys(obj).length;
+//   };
+///////////////////////////////////////////////////////////
 
-console.table(countProp({ name: "Mango", age: 2 })); // 2
+/////////////////calling for another variant///////////////////////////////
+// console.table(countProp({})); // 0
 
-console.table(countProp({ mail: "poly@mail.com", isOnline: true, score: 500 })); // 3
+// console.table(countProp({ name: "Mango", age: 2 })); // 2
+
+// console.table(countProp({ mail: "poly@mail.com", isOnline: true, score: 500 })); // 3
