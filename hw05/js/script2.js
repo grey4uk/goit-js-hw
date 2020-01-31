@@ -7,14 +7,19 @@ console.log("-----------------------task2--------------------------");
 // age - число
 // followers - число
 // Добавь метод getInfo(), который, выводит строку: User ${имя} is ${возраст} years old and has ${кол-во фоловеров} followers
-
-const User = function({ name, age, followers }) {
-  (this.name = name), (this.age = age), (this.followers = followers);
-};
-
-User.prototype.getInfo = function() {
-  console.log( `User ${this.name} is ${this.age} years old and has ${this.followers} followers` );
-};
+// debugger;
+class User {
+  constructor(user) {
+    this.name=user.name;
+    this.age=user.age;
+    this.followers=user.followers;
+  }
+  getInfo() {
+    console.log(
+      `User ${this.name} is ${this.age} years old and has ${this.followers} followers`
+    );
+  }
+}
 
 const mango = new User({
   name: "Mango",

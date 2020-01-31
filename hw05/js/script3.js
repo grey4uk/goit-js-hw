@@ -13,11 +13,11 @@ class Storage {
   constructor(arrayItems) {
     this.arrayItems = arrayItems;
   }
-  getItems(arrayItems) {
+  getItems() {
     return this.arrayItems;
   }
   addItem(item) {
-    return this.arrayItems.push(item);
+     this.arrayItems.push(item);
   }
   removeItem(item){
       for(this.arrayItem of this.arrayItems){
@@ -25,7 +25,6 @@ class Storage {
               this.arrayItems.splice(this.arrayItems.indexOf(this.arrayItem),1)
           }
       }
-      return this.arrayItems;
   }
 }
 
