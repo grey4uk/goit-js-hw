@@ -38,7 +38,8 @@ class Car {
    * который будет работать с свойством цены автомобиля.
    */
   get price() {
-    return this._price;
+    return this._price
+    // this._price;
   }
   set price(value) {
     this._price = value;
