@@ -6,8 +6,8 @@ console.log("---------------------------task10-----------------------------");
 const getSortedUniqueSkills = users => {
   // твой код
  return users
-    .map(user => user.skills)
-    .reduce((acc, el) => acc.concat(el), [])
+    // .map(user => user.skills)
+    .reduce((acc, user) => acc.concat(user.skills), [])
     .sort()
     .filter(
       (allSkill, index, allSkills) => index === allSkills.indexOf(allSkill)
