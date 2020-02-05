@@ -27,7 +27,7 @@ const inputText = document.querySelector("#validation-input");
 inputText.addEventListener("blur", validationCheck);
 
 function validationCheck(e) {
-  inputText.classList.remove("invalid", "valid");
+  inputText.classList.remove("invalid");
   inputText.value.length == inputText.dataset.length
     ? inputText.classList.add("valid")
     : inputText.classList.add("invalid");

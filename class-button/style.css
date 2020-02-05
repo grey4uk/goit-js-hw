@@ -1,0 +1,34 @@
+
+  .cursor: url("./5555.png"), auto;
+
+.main-div{
+  background-color: #45fa34;
+  border: 1 px solid black;
+  width: 424px;
+  height: 242px;
+  position: relative;
+  background-image: url(./1111.png);
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+
+.animate{
+  background-image: url("./3333.png");
+  height: 385px;
+  width: 280px;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.second-div{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-image: url(./22222.png);
+ z-index: 45;
+  background-size: contain;
+  filter: brightness(50%);
+  filter: hue-rotate(90deg);
+}
+
