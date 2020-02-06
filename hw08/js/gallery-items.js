@@ -19,16 +19,17 @@ const closeModalOnBtnClick = document.querySelector(".lightbox__button");
 
 // debugger;
 function onImgClick(e) {
-  let clickLi = e.target;
-  if (!clickLi.classList.contains("li")) {
-    clickLi = clickLi.closest(".gallery__item");
+  const clickImg = e.target;
+  const sorceImage = clickImg.querySelector("img");
+  if (e.target === e.currentTarget) {
+    return;
+  } else {
+    lightBoxFocus.classList.add("is-open");
+    lightBoxImgFocus.src = sorceImage.dataset.source;
+    closeModal.addEventListener("click", closeModalOnClick);
+    window.addEventListener("keydown", closeModalOnEsc);
+    closeModalOnBtnClick.addEventListener("click", closeModalOnClick);
   }
-  lightBoxFocus.classList.add("is-open");
-  const sorceImage = clickLi.querySelector("img");
-  lightBoxImgFocus.src = sorceImage.dataset.source;
-  closeModal.addEventListener("click", closeModalOnClick);
-  window.addEventListener("keydown", closeModalOnEsc);
-  closeModalOnBtnClick.addEventListener("click", closeModalOnClick);
 }
 
 function closeModalWindow() {
@@ -52,4 +53,3 @@ function closeModalOnEsc(e) {
   }
   closeModalWindow();
 }
-

@@ -13,7 +13,7 @@ class Round {
     //  this.body.style.filter = ;
     this.body.classList.add("second-div");
     parent.appendChild(this.body);
-    // gsap.fromTo(this.body, { opacity: 0 }, { opacity: 1, duration: 4, x, y });
+    gsap.fromTo(this.body, { opacity: 0 }, { opacity: 1, duration: 4, x, y });
   }
 }
 
@@ -40,15 +40,15 @@ let xx = 0;
 let yy = 0;
 let _x = 0;
 setInterval(() => {
-  animate.style.left = _x + 'px';
-  _x += 10;
+  // animate.style.left = _x + 'px';
+  // _x += 1;
   animate.style.backgroundPositionX = xx +'px';
   animate.style.backgroundPositionY = yy + 'px';
   xx-=animate.clientWidth;
   if (xx<-4*animate.clientWidth){
     xx=0;
     if (yy===0){
-      yy = -330;
+      yy = -384;
     }
     else {yy =0}
   }
