@@ -13,7 +13,7 @@ class Round {
     //  this.body.style.filter = ;
     this.body.classList.add("second-div");
     parent.appendChild(this.body);
-    gsap.fromTo(this.body, { opacity: 0 }, { opacity: 1, duration: 4, x, y });
+    // gsap.fromTo(this.body, { opacity: 0 }, { opacity: 1, duration: 4, x, y });
   }
 }
 

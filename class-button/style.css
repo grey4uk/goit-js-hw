@@ -7,7 +7,7 @@
   width: 424px;
   height: 242px;
   position: relative;
-  background-image: url(./1111.png);
+  background-image: url("./1111.png");
   background-repeat: no-repeat;
   background-position: cover;
 }
