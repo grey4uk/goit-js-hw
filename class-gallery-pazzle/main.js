@@ -1,6 +1,7 @@
 "use strict";
 
 import gallery from "./gallery-items.js";
+import PuzzleGame from "./puzzleGame/main.js";
 
 const letUl = document.querySelector("ul.js-gallery");
 const lightbox = document.querySelector(".lightbox");
@@ -25,6 +26,15 @@ function insertImages(arr) {
 }
 
 function onClick(e) {
+  new PuzzleGame(
+    e.target.dataset.source,
+    ".game",
+    3,
+    2
+  );
+
+return;
+
   if (e.target.localName === "img") {
     lightbox.classList.add("is-open");
     //lightbox.querySelector(".lightbox__image").src = e.target.dataset.source;

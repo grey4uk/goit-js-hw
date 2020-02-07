@@ -21,9 +21,8 @@ const closeModalOnBtnClick = document.querySelector(".lightbox__button");
 // debugger;
 function onImgClick(e) {
   // console.log('-->',e.target !== e.currentTarget);
-  // e.preventDefault();
   const clickImg = e.target;
-  if (clickImg.tagName === "A"){return;}
+//  if (clickImg.tagName === "A"){return;}
   if (e.target !== e.currentTarget) {
   lightBoxFocus.classList.add("is-open");
   lightBoxImgFocus.src = clickImg.dataset.source;
