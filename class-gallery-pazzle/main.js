@@ -1,6 +1,7 @@
 "use strict";
 
-import gallery from "./gallery-items.js";
+// import gallery from "./gallery-items.js";
+import gallery from "./myImages.js";
 import PuzzleGame from "./puzzleGame/main.js";
 
 const letUl = document.querySelector("ul.js-gallery");
