@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(222, 238, 233);
+}
+.timer{
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Russo One', sans-serif;
+    text-align: center;
+    background-color: rgba(111, 214, 192, 0.596);
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    border-radius: 60px;
+}
+.field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width:120px;
+    border:2px solid #fff;
+    border-radius: 50%;
+    background-color: rgba(29, 34, 39, 0.521);
+}
+.value{
+    margin-right: 4px;
+}
+.field:not(:last-child){
+    margin-right: 20px;
+}
