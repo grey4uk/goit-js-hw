@@ -69,7 +69,7 @@ class CountdownTimer {
 
 const countdownTimer = new CountdownTimer({
   selector: "#timer-1",
-  targetDate: new Date("Feb 18, 2020")
+  targetDate: new Date("Feb 15, 2020")
 });
 
 

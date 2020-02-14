@@ -1,5 +1,9 @@
 body{
-    background-color: rgb(222, 238, 233);
+    /* background-color: rgb(222, 238, 233); */
+    background-image: url("https://picua.org/images/2020/02/14/c0a684d7450b05c7bbaab259a188c847.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 .timer{
     color: #fff;
