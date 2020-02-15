@@ -1,7 +1,7 @@
 "use strict";
 
-// import gallery from "./gallery-items.js";
-import gallery from "./myImages.js";
+import gallery from "./gallery-items.js";
+// import gallery from "./myImages.js";
 import PuzzleGame from "./puzzleGame/main.js";
 
 const letUl = document.querySelector("ul.js-gallery");
@@ -27,11 +27,12 @@ function insertImages(arr) {
 }
 
 function onClick(e) {
+  document.querySelector(".game").style.display="block",
   new PuzzleGame(
     e.target.dataset.source,
     ".game",
     3,
-    2
+    3
   );
 
 return;

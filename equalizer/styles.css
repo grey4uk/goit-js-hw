@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+}
+.inputs{
+    width:800px ;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    
+}
+input{
+ transform: rotate(90deg);   
+ margin-left: -100px;
+}
