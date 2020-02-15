@@ -1,11 +1,12 @@
-body {
-    background-image: url("https://picua.org/images/2020/02/14/c0a684d7450b05c7bbaab259a188c847.jpg");
+.wrapper {
+    background-image: url("https://picua.org/images/2020/02/15/7056c7d456151bbf351aa0f22525a15d.jpg");
     background-repeat: no-repeat;
     background-repeat: no-repeat;
     background-origin: border-box;
     background-size: cover;
-    width:100%;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
 }
 
 .timer {
@@ -20,6 +21,7 @@ body {
     top: 20%;
     transform: translate(-50%);
     border-radius: 60px;
+  
 }
 
 .field {
@@ -37,6 +39,11 @@ body {
     margin-right: 4px;
 }
 
-.field:not(:last-child) {
-    margin-right: 20px;
+@media (max-width:500px){
+    .timer{
+        flex-wrap: wrap;
+        width:248px;
+        justify-content: space-between;
+    }
+    * {margin: 0;}
 }

@@ -29,7 +29,7 @@ class CountdownTimer {
       // alert("Date is here)))");
       document.querySelector(this.selector).style.display = "none";
       document.querySelector("h1").style.display = "none";
-      document.querySelector("body").style.backgroundImage =
+      document.querySelector("#wrapper").style.backgroundImage =
         'url("https://picua.org/images/2020/02/14/3a1ddd2212690c1e282a028bb48b3879.jpg")';
     }
   }
@@ -42,8 +42,10 @@ class CountdownTimer {
     }, 1000);
   }
 }
-const myDate=prompt("input data, such in example: Feb 15, 2020, 20:51");
+// const myDate=prompt("input data, such in example: Feb 15, 2020, 20:51");
 const countdownTimer = new CountdownTimer({
   selector: "#timer-1",
-  targetDate: new Date(`${myDate}`)
+  targetDate: new Date("Feb 26, 2020")
+  // ("Feb 26, 2020")
+  // (`${myDate}`)
 });
