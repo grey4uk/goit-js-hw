@@ -2,7 +2,7 @@
 
 import gallery from "./gallery-items.js";
 // import gallery from "./myImages.js";
-import PuzzleGame from "./puzzleGame/main.js";
+import PuzzleGame from "./puzzleGame/main1.js";
 
 const letUl = document.querySelector("ul.js-gallery");
 const lightbox = document.querySelector(".lightbox");

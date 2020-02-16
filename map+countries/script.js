@@ -1,4 +1,3 @@
-"use strict";
 import countries from "./data.js";
 
 const input = document.querySelector("#input");
