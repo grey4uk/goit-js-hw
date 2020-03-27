@@ -42,10 +42,10 @@ class CountdownTimer {
     }, 1000);
   }
 }
-// const myDate=prompt("input data, such in example: Feb 15, 2020, 20:51");
+const myDate=prompt("input data, such in example: Feb 15, 2020, 20:51");
 const countdownTimer = new CountdownTimer({
   selector: "#timer-1",
-  targetDate: new Date("Feb 26, 2020")
+  targetDate: new Date(`${myDate}`)
   // ("Feb 26, 2020")
   // (`${myDate}`)
 });
