@@ -89,7 +89,6 @@ getUl(){
     if (!aaa){
       setTimeout(()=>{alert('WIN!');
       const game=this.getGame();
-      game.innerHTML='';
       game.style.display='none';
       this.getUl().style.display='block'}
       , 1000);
