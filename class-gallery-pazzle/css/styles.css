@@ -142,11 +142,14 @@ body {
   display: block;
   margin: auto;
   position: fixed;
+  top: 0;
+  left: 0;
   width: 1000px;
   height: 600px;
   border: 2px solid red;
   background-size: 1000px 600px !important;
 }
+
 .game div {
   background-size: 1000px 600px !important;
 }

@@ -27,29 +27,20 @@ function insertImages(arr) {
 }
 
 function onClick(e) {
-  document.querySelector(".game").style.display="block",
+  const gameBox=document.querySelector(".game");
+  gameBox.style.display="block",
   new PuzzleGame(
     e.target.dataset.source,
     ".game",
     3,
-    3
+    3,
+    gameBox,
+    letUl
   );
+  letUl.style.display='none';
 
 return;
 
-  if (e.target.localName === "img") {
-    lightbox.classList.add("is-open");
-    //lightbox.querySelector(".lightbox__image").src = e.target.dataset.source;
-    //lightbox.querySelector(".lightbox__image").alt = e.target.alt;
-    lightbox
-      .querySelector(".lightbox__image")
-      .setAttribute("alt", e.target.alt);
-    lightbox
-      .querySelector(".lightbox__image")
-      .setAttribute("src", e.target.dataset.source);
-  }
-  document.addEventListener("keydown", onClose);
-  lightbox.addEventListener("click", onClose);
 }
 
 function onClose(e) {

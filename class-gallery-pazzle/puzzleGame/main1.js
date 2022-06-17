@@ -1,12 +1,15 @@
 import GameItem from "./GameItem.js";
 export default
 class PuzzleGame {
-  constructor(imgUrl, classHtml, col, row) {
+  constructor(imgUrl, classHtml, col, row,gameBox,letUl) {
+    console.log('this.props',  gameBox,
+      letUl);
     const place = document.querySelector(classHtml);
     place.insertAdjacentHTML(
       "beforeEnd",
       `<img src='${imgUrl}' width = "${place.clientWidth}" height = "${place.clientHeight}" style = "position: relative; opacity: 0">`
     );
+    this.setBlocks(gameBox,letUl);
     this.col = col;
     this.elements = [];
     this.divX = place.clientWidth / col;
@@ -33,6 +36,20 @@ class PuzzleGame {
       el.setPosition(pos.x, pos.y);
     });
   }
+
+setBlocks(game,ul){
+  this.game=game;
+  this.ul=ul;
+}
+
+getGame(){
+  return this.game;
+}
+
+getUl(){
+  return this.ul;
+}
+
   onClickItem(e) {
     
     const div = e.target;
@@ -72,7 +89,7 @@ class PuzzleGame {
 
     const aaa = this.elementRandom.find((el,i) => el.index !== i);
     if (!aaa){
-      setTimeout(function(){alert('WIN!');}, 1000);
+      setTimeout(()=>{alert('WIN!');this.getGame().style.display='none';this.getUl().style.display='block'}, 1000);
     }
   }
 
