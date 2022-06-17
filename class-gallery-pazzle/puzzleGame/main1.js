@@ -1,31 +1,29 @@
 import GameItem from "./GameItem.js";
 export default
 class PuzzleGame {
-  constructor(imgUrl, classHtml, col, row,gameBox,letUl) {
-    console.log('this.props',  gameBox,
-      letUl);
-    const place = document.querySelector(classHtml);
-    place.insertAdjacentHTML(
+  constructor(imgUrl, col, row,gameBox,letUl) {
+    
+    gameBox.insertAdjacentHTML(
       "beforeEnd",
-      `<img src='${imgUrl}' width = "${place.clientWidth}" height = "${place.clientHeight}" style = "position: relative; opacity: 0">`
+      `<img src='${imgUrl}' width = "${gameBox.clientWidth}" height = "${gameBox.clientHeight}" style = "position: relative; opacity: 0">`
     );
     this.setBlocks(gameBox,letUl);
     this.col = col;
     this.elements = [];
-    this.divX = place.clientWidth / col;
-    this.divY = place.clientHeight / row;
-    place.style.position = "relative";
+    this.divX = gameBox.clientWidth / col;
+    this.divY = gameBox.clientHeight / row;
+    gameBox.style.position = "relative";
     for (let i = 0; i < col * row; i++) {
       const cGameitem = new GameItem(i, this.divX, this.divY, imgUrl);
       const div = cGameitem.displayElement;
-      place.appendChild(div);
+      gameBox.appendChild(div);
       const pos = PuzzleGame.getPositionById(i, col, this.divX, this.divY);
       let setX = pos.x;
       let setY = pos.y;
       cGameitem.setInitialPosition(setX, setY);
       this.elements.push(cGameitem);
     }
-    place.addEventListener("click", this.onClickItem.bind(this));
+    gameBox.addEventListener("click", this.onClickItem.bind(this));
 
     this.elementRandom = [].concat(this.elements);
     this.elementRandom.sort((a, b) => -0.5 + Math.random());
@@ -70,7 +68,7 @@ getUl(){
         item.setSelected(true);
       }
     }
-    console.log(e, item);
+    // console.log(e, item);
     //div.style.width = "150px";
 
   }
@@ -89,7 +87,12 @@ getUl(){
 
     const aaa = this.elementRandom.find((el,i) => el.index !== i);
     if (!aaa){
-      setTimeout(()=>{alert('WIN!');this.getGame().style.display='none';this.getUl().style.display='block'}, 1000);
+      setTimeout(()=>{alert('WIN!');
+      const game=this.getGame();
+      game.innerHTML='';
+      game.style.display='none';
+      this.getUl().style.display='block'}
+      , 1000);
     }
   }
 

@@ -31,7 +31,6 @@ function onClick(e) {
   gameBox.style.display="block",
   new PuzzleGame(
     e.target.dataset.source,
-    ".game",
     3,
     3,
     gameBox,
