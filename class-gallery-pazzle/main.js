@@ -23,6 +23,9 @@ function insertImages(arr) {
     );
     return imgEl;
   });
+  setTimeout(() => {
+    alert('Choose photo for pazzle')
+  }, 1000);
   return letUl.prepend(...arrImg);
 }
 
